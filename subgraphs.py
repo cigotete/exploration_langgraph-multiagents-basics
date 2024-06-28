@@ -1,14 +1,32 @@
 from typing import Annotated
 from typing_extensions import TypedDict
 from langgraph.graph import StateGraph
+import uuid
 
 
 def reduce_list(left: list | None, right: list | None) -> list:
+    """Append the right-hand list, replacing any elements with the same id in the left-hand list."""
     if not left:
         left = []
     if not right:
         right = []
-    return left + right
+    left_, right_ = [], []
+    for orig, new in [(left, left_), (right, right_)]:
+        for val in orig:
+            if not isinstance(val, dict):
+                val = {"val": val}
+            if "id" not in val:
+                val["id"] = str(uuid.uuid4())
+            new.append(val)
+    # Merge the two lists
+    left_idx_by_id = {val["id"]: i for i, val in enumerate(left_)}
+    merged = left_.copy()
+    for val in right_:
+        if (existing_idx := left_idx_by_id.get(val["id"])) is not None:
+            merged[existing_idx] = val
+        else:
+            merged.append(val)
+    return merged
 
 
 class ChildState(TypedDict):
