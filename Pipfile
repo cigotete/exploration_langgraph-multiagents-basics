@@ -13,6 +13,8 @@ matplotlib = "*"
 langgraph = "*"
 langchain-core = "*"
 python-dotenv = "*"
+psycopg = "*"
+psycopg-pool = "*"
 
 [dev-packages]
 

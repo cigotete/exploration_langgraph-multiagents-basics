@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "4b67abfd4f2ac9fe69d96a5f89652c5bd6c264386b7419711ae43b07c626d3bc"
+            "sha256": "c0815bbfd0103d4a132aef6405f9cf2213038d2025e60ac24b1c18e0bae9f75b"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -926,7 +926,7 @@
                 "sha256:f870204a840a60da0b12273ef34f7051e98c3b5961b61b0c2c1be6dfd64fbcd3",
                 "sha256:ffa75af20b44f8dba823498024771d5ac50620e6915abac414251bd971b4529f"
             ],
-            "markers": "python_version >= '3.9'",
+            "markers": "python_version < '3.12'",
             "version": "==1.26.4"
         },
         "openai": {
@@ -1108,12 +1108,30 @@
             "markers": "python_version >= '3.8'",
             "version": "==10.3.0"
         },
+        "psycopg": {
+            "hashes": [
+                "sha256:32f5862ab79f238496236f97fe374a7ab55b4b4bb839a74802026544735f9a07",
+                "sha256:898a29f49ac9c903d554f5a6cdc44a8fc564325557c18f82e51f39c1f4fc2aeb"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.7'",
+            "version": "==3.1.20"
+        },
+        "psycopg-pool": {
+            "hashes": [
+                "sha256:273081d0fbfaced4f35e69200c89cb8fbddfe277c38cc86c235b90a2ec2c8153",
+                "sha256:9e22c370045f6d7f2666a5ad1b0caf345f9f1912195b0b25d0d3bcc4f3a7389c"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.8'",
+            "version": "==3.2.2"
+        },
         "pydantic": {
             "hashes": [
                 "sha256:0c84efd9548d545f63ac0060c1e4d39bb9b14db8b3c0652338aecc07b5adec52",
                 "sha256:ee8538d41ccb9c0a9ad3e0e5f07bf15ed8015b481ced539a1759d8cc89ae90d0"
             ],
-            "markers": "python_full_version < '3.12.4'",
+            "markers": "python_version >= '3.8'",
             "version": "==2.7.4"
         },
         "pydantic-core": {
@@ -1532,7 +1550,7 @@
                 "sha256:2674120f8d891909751c38abcdfd386ac0a5a1127954fbc332af6b5ceae07efd",
                 "sha256:9068bc196136463f5245e51efda838afa15aaeca9903f49050dfa2679db4d252"
             ],
-            "markers": "python_version >= '2'",
+            "markers": "sys_platform == 'win32'",
             "version": "==2024.1"
         },
         "urllib3": {
